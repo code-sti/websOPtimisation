@@ -1,0 +1,21 @@
+/* Add this to your CSS file */
+#sidebar {
+    min-height: 100vh;
+    padding-top: 20px;
+    background-color: #f8f9fa; /* Light gray background color */
+}
+
+#sidebar a {
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #000; /* Black text color */
+}
+
+#sidebar .nav-item {
+    margin-bottom: 10px;
+}
+
+#sidebar .nav-link.active {
+    background-color: #007bff; /* Blue background color for the active link */
+    color: #fff; /* White text color for the active link */
+}
