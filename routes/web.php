@@ -15,7 +15,7 @@ use App\Http\Controllers\NotificationController;
 */
 
 Route::get('/', function () {
-    Artisan::call('db:seed');
+    return view('welcome');
 });
 
 

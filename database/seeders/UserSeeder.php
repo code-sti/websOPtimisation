@@ -19,9 +19,9 @@ class UserSeeder extends Seeder
         $faker = Container::getInstance()->make(Generator::class);
         $data = [];
 
-        for($i=0; $i<2; $i++) {
+        for($i=0; $i<200; $i++) {
 
-            for($v=0; $v< 1000; $v++) {
+            for($v=0; $v<500; $v++) {
                 $data[] = [
                     'name' => $faker->name(),
                     'email' => $faker->unique()->safeEmail(),
@@ -31,7 +31,6 @@ class UserSeeder extends Seeder
 
             }
 
-            dd($data);
             $chunks = array_chunk($data, 50);
             foreach ($chunks as $chunk) {
                 User::query()->insert($chunk);
