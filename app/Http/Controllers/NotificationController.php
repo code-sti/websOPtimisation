@@ -33,9 +33,7 @@ class NotificationController extends Controller
         try{
 
             // Dispatch job for asynchronous notification processing
-            dispatch(new ProcessNotification($notification))->delay(now()->addSeconds(5))->retryUnless(function (Exception $e) {
-                return in_array(get_class($e), ['NotificationChannelException', 'UserNotFoundException']);
-            });
+            dispatch(new ProcessNotification($notification))->delay(now()->addSeconds(5));
             return redirect()->route('notifications.create')->with('success', 'Notifications sent successfully!');
         }catch (Exception $e) {
             Log::error('An error occurred: ' . $e->getMessage());
